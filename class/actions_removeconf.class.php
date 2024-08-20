@@ -265,7 +265,7 @@ class Actionsremoveconf
 			//Cancel
 			if (($action == 'cancel') && ($user->rights->removeconf->cancel_order)){
 				$this->results = true;
-				$page = $_SERVER["PHP_SELF"] . '?id=' . $object->id;
+				$page = $_SERVER["PHP_SELF"] . '?id=' . $object->id.'&token='.newToken();
 				$action_confirm = 'confirm_cancel';
 				dol_syslog(get_class($this).'::action = cancel', LOG_DEBUG, 1 , '', '');
 			}
